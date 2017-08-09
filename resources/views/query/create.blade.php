@@ -1,4 +1,5 @@
-@extends('layout.master')
+@extends('master')
+@section('title', 'Submit a query')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -26,21 +27,28 @@
 
     <div class="form-group">
         {!! Form::label('firstName', 'First Name') !!}
-        {!! Form::text('firstName', '', ['class' => 'form-control']) !!}
+        {!! Form::text('firstName', null, ['class' => 'form-control', 'placeholder' => 'John']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('lastName', 'Last Name') !!}
-        {!! Form::text('lastName', '', ['class' => 'form-control']) !!}
+        {!! Form::text('lastName', null, ['class' => 'form-control', 'placeholder' => 'Doe']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('email', 'Email') !!}
-        {!! Form::text('email', '', ['class' => 'form-control']) !!}
+        {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 's1234567@student.rmit.edu.au']) !!}
     </div>
+
     <div class="form-group">
-        {!! Form::label('isAdmin', 'Are you an administrator?') !!}
-        {!! Form::checkbox('isAdmin', 'value', false); !!}
+        {!! Form::label('operatingSystem', 'Operating System') !!}
+        {!! Form::text('operatingSystem', null, ['class' => 'form-control', 'placeholder' => 'Windows 10']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('issue', 'Issue') !!}
+        {!! Form::textarea('issue', null, ['class' => 'form-control','placeholder' => 'Describe your issue here'
+        ,'maxlength' =>2000, 'rows' => 5, 'style' => 'resize:none']) !!}
     </div>
 
     <button class="btn btn-success" type="submit">Submit Query</button>

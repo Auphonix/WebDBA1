@@ -15,14 +15,14 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userID')->unsigned();
+            $table->string('userEmail');
             $table->string('operatingSystem');
             $table->string('issue');
             $table->string('status');
             $table->timestamps();
 
-            $table->foreign('userID')
-                ->references('id')
+            $table->foreign('userEmail')
+                ->references('email')
                 ->on('users');
         });
     }
