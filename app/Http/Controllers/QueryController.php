@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PhpConsole;
 use App\User;
 use App\Ticket;
+use App\Http\Requests\QueryRequest;
 
 class QueryController extends Controller
 {
@@ -16,15 +17,8 @@ class QueryController extends Controller
         return view('query.create', ['user' => $user]);
     }
 
-    public function store(Request $request)
+    public function store(QueryRequest $request)
     {
-        $this->validate($request, [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'email' => 'required',
-            'operatingSystem' => 'required',
-            'issue' => 'required',
-        ]);
 
         $allRequests = $request->all();
         $adminFormat = '@admin.rmit.edu.au';
@@ -44,8 +38,7 @@ class QueryController extends Controller
         $this->saveTicket($allRequests);
 
         // Finish store
-        return redirect()->route('query.create')->with('success', 'Query added
-successfully');
+        return redirect()->route('query.create')->with('success', 'Query added successfully');
     }
 
 
