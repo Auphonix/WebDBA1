@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::resource('query', 'QueryController');
 Route::resource('ticket', 'TicketController');
+Route::resource('comment', 'CommentController');

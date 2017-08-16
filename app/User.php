@@ -10,4 +10,9 @@ class User extends Model
     protected $primaryKey = 'email';
     public $incrementing = false;
 
+    public function tickets()
+    {
+        return $this->hasMany('Ticket');
+    }
+
 }

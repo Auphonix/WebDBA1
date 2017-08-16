@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Ticket;
+use App\User;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -49,7 +51,8 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = Ticket::with('User')->find($id);
+        return view('ticket.show',compact('ticket'));
     }
 
     /**
@@ -83,6 +86,16 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Removes all associated comments
+        $comments = Comment::where('ticketID', $id)->get();
+        foreach($comments as $comment){
+            $comment->delete();
+        }
+
+        // Removes the ticket
+        Ticket::find($id)->delete();
+
+        // Returns to the index page with success 
+        return redirect()->route('ticket.index') ->with('success','Ticket deleted successfully');
     }
 }

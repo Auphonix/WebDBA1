@@ -7,7 +7,7 @@
                 <h2>All Tickets</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('ticket.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('query.create') }}"> Create New Ticket</a>
             </div>
         </div>
     </div>
