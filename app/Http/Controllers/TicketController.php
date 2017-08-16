@@ -95,7 +95,7 @@ class TicketController extends Controller
         // Removes the ticket
         Ticket::find($id)->delete();
 
-        // Returns to the index page with success 
+        // Returns to the index page with success
         return redirect()->route('ticket.index') ->with('success','Ticket deleted successfully');
     }
 }

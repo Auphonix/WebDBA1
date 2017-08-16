@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         // Added a custom validation for forms
         Validator::extend('alpha_spaces', function($attribute, $value)
         {
-            return preg_match('/^[a-zA-Z0-9 ]+$/', $value);
+            return preg_match('/^[a-zA-Z0-9 .]+$/', $value);
         });
 
         // Prevents an error regarding SQL String lengths

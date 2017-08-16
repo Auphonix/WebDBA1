@@ -28,7 +28,7 @@ class QueryRequest extends FormRequest
             'lastName' => 'required|alpha|max:255',
             'email' => 'required|email|max:255',
             'operatingSystem' => 'required|alpha_spaces|max:50',
-            'issue' => 'required|alpha_dash|max:255',
+            'issue' => 'required|alpha_spaces|max:255',
         ];
     }
 }
