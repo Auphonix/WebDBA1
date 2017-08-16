@@ -18,7 +18,7 @@
                 <li><a href="#">FAQ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">ITS Admins</a></li>
+                <li><a href="{{ url('ticket') }}">ITS Admins</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
