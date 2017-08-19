@@ -1,5 +1,5 @@
 .navbar-default {
-  background-color: #F44336;
+  background-color: $google-red;
   border: none;
 }
 
@@ -12,7 +12,6 @@
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #FF5252;
   border-color: white;
 }
 

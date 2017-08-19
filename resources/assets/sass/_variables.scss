@@ -16,13 +16,17 @@ $brand-success: #2ab27b;
 $brand-warning: #cbb956;
 $brand-danger: #bf5329;
 
+// Colours sourced from Google Material Design
+$google-red: #F44336;
+$google-font-primary: transparentize(#000, 0.13);
+
 // Typography
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 //$text-color: #636b6f;
-$text-color: transparentize(#000, 0.13);
+$text-color: $google-font-primary;
 
 // Navbar
 $navbar-default-bg: #fff;

@@ -8369,7 +8369,6 @@ button.close {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #FF5252;
   border-color: white;
 }
 
@@ -8390,6 +8389,10 @@ footer {
 
 footer .container {
   text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
 }
 
 .introduction {
