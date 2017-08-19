@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    return view('static_pages/home');
+})->name('home');
+
+Route::get('/faq', function () {
+   return view('static_pages/faq');
+})->name('faq');
 
 Route::resource('query', 'QueryController');
 Route::resource('ticket', 'TicketController');

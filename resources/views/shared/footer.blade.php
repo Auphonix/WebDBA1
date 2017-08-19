@@ -1,3 +1,5 @@
-<div class="container">
-    <h5>Simple footer for Question 1.2's sake</h5>
-</div>
+<footer>
+    <div class="container">
+        <span class="text-muted">This is a prototype version of the RMIT Service & Support portal</span>
+    </div>
+</footer>
