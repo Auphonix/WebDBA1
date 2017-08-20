@@ -7,7 +7,7 @@
                 <h2>All Tickets</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('query.create') }}"> Create New Ticket</a>
+                <a class="btn btn-success" href="{{ route('ticket.create') }}"> Create New Ticket</a>
             </div>
         </div>
     </div>
@@ -29,8 +29,8 @@
                 <td>{{ $ticket->userEmail}}</td>
                 <td>{{ $ticket->issue}}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('ticket.show',$ticket->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('ticket.edit',$ticket->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ route('ticket.show', $ticket->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('ticket.edit', $ticket->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['ticket.destroy', $ticket->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Close', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}

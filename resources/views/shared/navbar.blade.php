@@ -14,11 +14,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('query/create') }} ">Submit Ticket</a></li>
+                <li><a href="{{ route('ticket.create') }} ">Submit Ticket</a></li>
                 <li><a href="{{ route('faq') }}">FAQ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('ticket') }}">ITS Admins</a></li>
+                <li><a href="{{ route('ticket.index') }}">ITS Admins</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

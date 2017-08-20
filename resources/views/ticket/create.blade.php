@@ -1,13 +1,14 @@
 @extends('master')
-@section('title', 'Submit a query')
+@section('title', 'Submit a ticket')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Query</h2>
+                <h2>Submit A Ticket</h2>
             </div>
         </div>
     </div>
+
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -18,13 +19,14 @@
             </ul>
         </div>
     @endif
+
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-    {!! Form::model($user, ['action' => 'QueryController@store']) !!}
 
+    {!! Form::model($user, ['action' => 'TicketController@store']) !!}
     <div class="form-group">
         {!! Form::label('firstName', 'First Name') !!}
         {!! Form::text('firstName', null, ['class' => 'form-control', 'placeholder' => 'John']) !!}
@@ -51,7 +53,6 @@
         ,'maxlength' =>2000, 'rows' => 5, 'style' => 'resize:none']) !!}
     </div>
 
-    <button class="btn btn-success" type="submit">Submit Query</button>
-
+    <button class="btn btn-success" type="submit">Submit Ticket</button>
     {!! Form::close() !!}
 @endsection
