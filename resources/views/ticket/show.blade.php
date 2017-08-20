@@ -21,7 +21,10 @@
     <table class="table table-bordered table-condensed">
         <tr>
             <td class="col-lg-3">{{$user->firstName . " " . $user->lastName}}</td>
-            <th class="col-lg-9" rowspan="4">{{$ticket->issue}}</th>
+            <td class="col-lg-9" rowspan="4">
+                <h4>{{ $ticket->issue }}</h4><br/>
+                {{ $ticket->description }}
+            </td>
         </tr>
         <tr>
             <td>{{$user->email}}</td>

@@ -140,6 +140,7 @@ class TicketController extends Controller
         $ticket->operatingSystem = $allRequests['operatingSystem'];
         $ticket->status = "Pending";
         $ticket->issue = $allRequests['issue'];
+        $ticket->description = $allRequests['description'];
         $ticket->save();
     }
 }

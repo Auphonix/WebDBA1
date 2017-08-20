@@ -49,7 +49,12 @@
 
     <div class="form-group">
         {!! Form::label('issue', 'Issue') !!}
-        {!! Form::textarea('issue', null, ['class' => 'form-control','placeholder' => 'Describe your issue here'
+        {!! Form::text('issue', null, ['class' => 'form-control','placeholder' => 'Describe your issue here']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('description', 'Description') !!}
+        {!! Form::textarea('description', null, ['class' => 'form-control','placeholder' => 'Add any additional comments'
         ,'maxlength' =>2000, 'rows' => 5, 'style' => 'resize:none']) !!}
     </div>
 
