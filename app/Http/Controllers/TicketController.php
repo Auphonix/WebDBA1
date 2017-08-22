@@ -99,7 +99,7 @@ class TicketController extends Controller
         $allrequests = $request->all();
         $userDetails = array('firstName' => $allrequests['firstName'], 'lastName' =>$allrequests['lastName'],
             'email' => $allrequests['email']);
-        $ticketDetails = array('userEmail' => $allrequests['email'], 'operatingSystem' => $allrequests['operatingSystem'],
+        $ticketDetails = array('status' => $allrequests['status'], 'userEmail' => $allrequests['email'], 'operatingSystem' => $allrequests['operatingSystem'],
             'issue' => $allrequests['issue'], 'description' => $allrequests['description']);
 
         Ticket::find($id)->update($ticketDetails);

@@ -7,6 +7,7 @@ if (isset($ticket)) {
     $params = array(null, null, null, null, null, null, 'Submit Ticket');
 }
 ?>
+
 <div class="form-group">
     {!! Form::label('firstName', 'First Name') !!}
     {!! Form::text('firstName', $params[0], ['class' => 'form-control', 'placeholder' => 'John']) !!}
@@ -35,7 +36,7 @@ if (isset($ticket)) {
 <div class="form-group">
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description', $params[5], ['class' => 'form-control','placeholder' => 'Add any additional comments'
-    ,'maxlength' =>2000, 'rows' => 5, 'style' => 'resize:none']) !!}
+    ,'maxlength' =>2000, 'rows' => 4, 'style' => 'resize:none']) !!}
 </div>
 
 <button class="btn btn-success" type="submit">{{$params[6]}}</button>

@@ -22,6 +22,18 @@
         </div>
     @endif
     {!! Form::model($ticket, ['method' => 'PATCH','route' => ['ticket.update', $ticket->id]]) !!}
+
+    {{--CHANGE THE STATUS OF THE TICKET FIELD--}}
+    @if(isset($ticket))
+        <div class="form-group">
+            {!! Form::label('status', 'Status') !!}
+            {{ Form::select('status', ['Pending' => 'Pending', 'In Progress' => 'In Progress',
+            'Unresolved' => 'Unresolved', 'Resolved' => 'Resolved']) }}
+        </div>
+    @endif
+
+    {{--INCLUDE FORM TEMPLATE--}}
     @include('ticket.form')
+
     {!! Form::close() !!}
 @endsection
