@@ -58,7 +58,7 @@
 
         <!-- THIS IS WHERE THE COMMENT FORM BEGINS -->
         {!! Form::model(Comment::class, ['action' => 'CommentController@store']) !!}
-        {!! Form::hidden('userEmail', $ticket->userEmail, [ 'class' => 'form-control', 'hidden']) !!}
+        {!! Form::hidden('userEmail', 'admin@rmit.edu.au', [ 'class' => 'form-control', 'hidden']) !!}
         {!! Form::hidden('ticketID', $ticket->id, ['class' => 'form-control', 'hidden']) !!}
         <tr>
             <td colspan="2" class="col-lg-8">
