@@ -19,5 +19,5 @@ Route::get('/faq', function () {
    return view('static_pages/faq');
 })->name('faq');
 
-Route::resource('ticket', 'TicketController');
-Route::resource('comment', 'CommentController');
+Route::resource('ticket', 'TicketController', ['except' => ['destroy']]);
+Route::resource('comment', 'CommentController', ['only' => ['store']]);

@@ -1,3 +1,12 @@
+<?php
+$statusMap = array(
+    "Resolved" => "success",
+    "Unresolved" => "danger",
+    "Pending" => "default",
+    "In Progress" => "default"
+);
+?>
+
 @extends('master')
 @section('pageTitle', 'Show Tickets')
 @section('content')
@@ -6,7 +15,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>{{"Ticket ID: " . $ticket->id . " | Status: " . $ticket->status}} </h2>
+                <h2>{{"Ticket ID: " . $ticket->id }} <span class="label label-{{  $statusMap[$ticket->status] }}">{{  $ticket->status }}</span></h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('ticket.index') }}">Back</a>

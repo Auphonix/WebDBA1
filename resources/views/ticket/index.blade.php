@@ -1,3 +1,12 @@
+<?php
+$statusMap = array(
+    "Resolved" => "success",
+    "Unresolved" => "danger",
+    "Pending" => "default",
+    "In Progress" => "default"
+);
+?>
+
 @extends('master')
 @section('content')
     <head><title>Index</title></head>
@@ -21,19 +30,18 @@
             <th>No</th>
             <th>User</th>
             <th>Details</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($tickets as $ticket)
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $ticket->userEmail}}</td>
-                <td>{{ $ticket->issue}}</td>
+                <td>{{ $ticket->id }}</td>
+                <td>{{ $ticket->userEmail }}</td>
+                <td>{{ $ticket->issue }}</td>
+                <td><strong class="label label-{{{ $statusMap[$ticket->status] }}}">{{ $ticket->status }}</strong></td>
                 <td>
                     <a class="btn btn-info" href="{{ route('ticket.show', $ticket->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('ticket.edit', $ticket->id) }}">Edit</a>
-                    {!! Form::open(['method' => 'DELETE','route' => ['ticket.destroy', $ticket->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Close', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach
