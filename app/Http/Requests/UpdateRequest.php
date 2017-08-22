@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QueryRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class QueryRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; // Change to true to allow validation from this file
+        return true;
     }
 
     /**
@@ -26,7 +26,7 @@ class QueryRequest extends FormRequest
         return [
             'firstName' => 'required|alpha|max:255',
             'lastName' => 'required|alpha|max:255',
-            'email' => 'required|email|unique:users|max:255',
+            'email' => 'required|email|max:255',
             'operatingSystem' => 'required|alpha_spaces|max:50',
             'issue' => 'required|alpha_spaces|max:255',
         ];

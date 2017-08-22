@@ -23,7 +23,8 @@ class CreateTicketsTable extends Migration
 
             $table->foreign('userEmail')
                 ->references('email')
-                ->on('users');
+                ->on('users')
+                ->onUpdate('cascade');
         });
     }
 

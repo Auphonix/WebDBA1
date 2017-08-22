@@ -6,7 +6,7 @@ use App\Comment;
 use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\QueryRequest;
+use App\Http\Requests\UpdateRequest;
 
 
 class TicketController extends Controller
@@ -83,7 +83,8 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ticket= Ticket::find($id);
+        return view('ticket.edit',compact('ticket'));
     }
 
     /**
@@ -93,9 +94,17 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $allrequests = $request->all();
+        $userDetails = array('firstName' => $allrequests['firstName'], 'lastName' =>$allrequests['lastName'],
+            'email' => $allrequests['email']);
+        $ticketDetails = array('userEmail' => $allrequests['email'], 'operatingSystem' => $allrequests['operatingSystem'],
+            'issue' => $allrequests['issue'], 'description' => $allrequests['description']);
+
+        Ticket::find($id)->update($ticketDetails);
+        User::find(Ticket::find($id)->userEmail)->update($userDetails);
+        return redirect()->route('ticket.index') ->with('success','Ticket updated successfully');
     }
 
     /**
