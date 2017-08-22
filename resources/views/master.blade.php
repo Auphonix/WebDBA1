@@ -4,7 +4,7 @@
 @include('shared.header')
 <body>
     @include('shared.navbar')
-    <div class="container">
+    <div class="container content">
         @yield('content')
     </div>
     @include('shared.footer')
