@@ -7,6 +7,7 @@ use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateRequest;
+use App\Http\Requests\QueryRequest;
 
 
 class TicketController extends Controller
